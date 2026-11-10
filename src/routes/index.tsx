@@ -1,5 +1,5 @@
 import type { CSSProperties } from "react";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { createFileRoute } from "@tanstack/react-router";
 import { Menu, X } from "lucide-react";
 import capturedCSS from "../styles/site.css?raw";
@@ -64,50 +64,31 @@ function Index() {
           </div>
         </div>
       </div>
-      <div className="lov-shadow-0" style={{ position: "fixed", width: "100%", height: "100%", bottom: "0px", right: "0px", pointerEvents: "none", display: "block", zIndex: "999999999" }} id="tidio-chat">
-        <div className="awesome-iframe" id="body" data-ce-shadow-root="lov-shadow-0">
-          <div className={"\x67rid-layout widget-position-right sidebar-position-right"} style={{ width: "410px", "--custom-background": "#2a27da", "--custom-text-color": "#fff", "--custom-action-color": "#0566ff", "--custom-action-color-contrast": "#fff", "--custom-action-color-hover": "color-mix(in srgb, var(--custom-action-color), white 10%)", "--custom-action-color-active": "color-mix(in srgb, var(--custom-action-color), white 20%)", "--custom-action-color-background": "color-mix(in srgb, var(--custom-action-color), white 90%)", "--custom-action-color-background-active": "color-mix(in srgb, var(--custom-action-color), white 60%)", "--radius-surface": "12px", "--radius-component": "12px", "--radius-small-component": "8px", "--chat-padding": "20px", "--message-padding-block": "16px", "--message-padding-inline": "16px", "--message-font-size": "14px", "--message-line-height": "20px", "--starter-padding-block": "14px", "--starter-chat-padding-block": "16px", "--starters-gap": "8px", "--bubble-size": "56px", "--label-padding-block": "12px", "--label-padding-inline": "16px", "--label-shadow": "0px 2px 8px 0px rgba(8, 15, 26, 0.08), 0px 2px 2px 0px rgba(8, 15, 26, 0.12)", "--fly-shadow": "0px 12px 32px 0px rgba(8, 15, 26, 0.12)", "--operator-message": "#f5f7f9", "--border-color": "#D3DBE5" } as CSSProperties} id="tidio-chat-root" role="region" aria-label="Chat widget" data-ce-shadow-root="lov-shadow-0">
-            <div className="flyMessage tidio-5eo1yy" data-ce-shadow-root="lov-shadow-0">
-              <div className="message-container" data-ce-shadow-root="lov-shadow-0">Hi there <img className="emoji" alt="👋" src="/site-assets/cde3bfe64181c975.png" data-ce-shadow-root="lov-shadow-0" /> We are currently offline, but if you need any assistance, feel free to ask. We will reply as soon as possible.</div>
-              <div className="input-group" data-ce-shadow-root="lov-shadow-0">
-                <button className="fly-new-message-button" style={{ width: "auto", minWidth: "130px" }} type="button" id="new-message-button-fly" data-ce-shadow-root="lov-shadow-0">Enter your message...</button>
-              </div>
-              <div className="close-button-wrapper" data-ce-shadow-root="lov-shadow-0">
-                <button className="exit-chat" type="button" aria-label="Close chat widget" data-ce-shadow-root="lov-shadow-0">
-                  <svg id="ic_close" fill="#000000" height="20" viewBox="0 0 20 20" width="20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" data-ce-shadow-root="lov-shadow-0">
-                    <path d="M5.275 16L4 14.725L8.725 10L4 5.275L5.275 4L10 8.725L14.725 4L16 5.275L11.275 10L16 14.725L14.725 16L10 11.275L5.275 16Z" data-ce-shadow-root="lov-shadow-0" />
-                    <path d="M0 0h24v24H0z" fill="none" data-ce-shadow-root="lov-shadow-0" />
-                  </svg>
-                </button>
-              </div>
-            </div>
-            <div className="chat-open" id="button" data-ce-shadow-root="lov-shadow-0">
-              <button style={{ boxShadow: "rgba(8, 15, 26, 0.08) 0px 2px 8px 0px, rgba(8, 15, 26, 0.12) 0px 2px 2px 0px" }} type="button" id="button-body" tabIndex={0} aria-label="Close chat widget, Unread messages: 1" data-ce-shadow-root="lov-shadow-0">
-                <i className="material-icons type1 for-closed active" style={{ color: "var(--custom-text-color, #fff)" }} data-ce-shadow-root="lov-shadow-0">
-                  <svg id="ic_bubble" fill="#FFFFFF" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" data-ce-shadow-root="lov-shadow-0">
-                    <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z" data-ce-shadow-root="lov-shadow-0" />
-                    <path d="M0 0h24v24H0z" fill="none" data-ce-shadow-root="lov-shadow-0" />
-                  </svg>
-                </i>
-                <i className="material-icons type1 for-opened" style={{ color: "var(--custom-text-color, #fff)" }} data-ce-shadow-root="lov-shadow-0">
-                  <svg id="ic_close" fill="#000000" height="20" viewBox="0 0 20 20" width="20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" data-ce-shadow-root="lov-shadow-0">
-                    <path d="M5.275 16L4 14.725L8.725 10L4 5.275L5.275 4L10 8.725L14.725 4L16 5.275L11.275 10L16 14.725L14.725 16L10 11.275L5.275 16Z" data-ce-shadow-root="lov-shadow-0" />
-                    <path d="M0 0h24v24H0z" fill="none" data-ce-shadow-root="lov-shadow-0" />
-                  </svg>
-                </i>
-              </button>
-              <div className="active" id="new-message" aria-hidden="true" data-ce-shadow-root="lov-shadow-0">1</div>
-            </div>
-          </div>
-        </div>
-      </div>
     </>
   );
 }
 
 function ImportedNav() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [isDark, setIsDark] = useState(true);
+  const menuButtonRef = useRef<HTMLButtonElement>(null);
   const closeMenu = () => setMenuOpen(false);
+  const toggleTheme = () => {
+    const nextThemeIsDark = !isDark;
+    setIsDark(nextThemeIsDark);
+    document.documentElement.classList.toggle("dark", nextThemeIsDark);
+  };
+
+  useEffect(() => {
+    if (!menuOpen) return;
+    const closeOnEscape = (event: KeyboardEvent) => {
+      if (event.key !== "Escape") return;
+      setMenuOpen(false);
+      menuButtonRef.current?.focus();
+    };
+    window.addEventListener("keydown", closeOnEscape);
+    return () => window.removeEventListener("keydown", closeOnEscape);
+  }, [menuOpen]);
 
   return (
     <nav className={"fixed top-0 w-full z-50 transition-all \x64uration-300 bg-transparent"} data-site-import-scroll-header={"{\"desktop\":{\"added\":[\"nav-blur\",\"border-b\",\"border-border\"],\"removed\":[\"bg-transparent\"],\"threshold\":648},\"mobile\":{\"added\":[\"nav-blur\",\"border-b\",\"border-border\"],\"removed\":[\"bg-transparent\"],\"threshold\":633}}"}>
@@ -144,7 +125,7 @@ function ImportedNav() {
               <span className={"effect \x66ilter"} style={{ left: "0px", top: "0px", width: "61.9219px", height: "34px" }} data-site-import-responsive="37" />
               <span className="effect text active" style={{ left: "0px", top: "0px", width: "61.9219px", height: "34px" }} data-site-import-responsive="38">Home</span>
             </div>
-            <button className="luxury-toggle group" type="button" aria-label="Switch to luxury light theme">
+            <button className="luxury-toggle group" type="button" aria-label={isDark ? "Switch to luxury light theme" : "Switch to luxury dark theme"} onClick={toggleTheme}>
               <span className="luxury-toggle-thumb">
                 <svg className={"absolute h-3.5 w-3.5 \x74ext-[\x68sl(\x328_35%\x5f12%)] transition-all \x64uration-500 opacity-0 \x2drotate-90 \x73cale-50"} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                   <circle cx="12" cy="12" r="4" />
@@ -164,7 +145,7 @@ function ImportedNav() {
             </button>
           </div>
           <div className={"\x6dd:\x68idden flex items-center \x73pace-x-2"}>
-            <button className="luxury-toggle group" type="button" aria-label="Switch to luxury light theme">
+            <button className="luxury-toggle group" type="button" aria-label={isDark ? "Switch to luxury light theme" : "Switch to luxury dark theme"} onClick={toggleTheme}>
               <span className="luxury-toggle-thumb">
                 <svg className={"absolute h-3.5 w-3.5 \x74ext-[\x68sl(\x328_35%\x5f12%)] transition-all \x64uration-500 opacity-0 \x2drotate-90 \x73cale-50"} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                   <circle cx="12" cy="12" r="4" />
@@ -184,9 +165,11 @@ function ImportedNav() {
             </button>
             <button
               className="inline-flex h-9 items-center justify-center rounded-md px-3 transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring md:hidden"
+              ref={menuButtonRef}
               type="button"
               aria-label={menuOpen ? "Close navigation menu" : "Open navigation menu"}
               aria-expanded={menuOpen}
+              aria-controls="portfolio-mobile-menu"
               onClick={() => setMenuOpen((open) => !open)}
             >
               {menuOpen ? <X className="h-5 w-5" aria-hidden="true" /> : <Menu className="h-5 w-5" aria-hidden="true" />}
@@ -194,7 +177,7 @@ function ImportedNav() {
           </div>
         </div>
         {menuOpen && (
-          <div className="absolute left-4 right-4 top-16 z-[70] border border-border bg-background/95 p-2 shadow-lg backdrop-blur-md sm:left-6 sm:right-6 md:hidden">
+          <div id="portfolio-mobile-menu" className="absolute left-4 right-4 top-16 z-[70] border border-border bg-background/95 p-2 shadow-lg backdrop-blur-md sm:left-6 sm:right-6 md:hidden">
             {[
               ["Home", "#home"],
               ["About Me", "#about"],
