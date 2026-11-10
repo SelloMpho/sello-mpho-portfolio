@@ -3482,6 +3482,7 @@ body::after {
 
 /* Captured reveal styles depended on an animation runtime that is not part of this import. */
 #root [style*="opacity: 0"],
+#root [style*="opacity:0"],
 #root [style*="opacity: 0;"] {
   opacity: 1 !important;
   transform: none !important;
