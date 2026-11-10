@@ -1,7 +1,9 @@
 import type { CSSProperties } from "react";
 import { useEffect, useRef, useState } from "react";
 import { createFileRoute } from "@tanstack/react-router";
-import { BookOpen, ExternalLink, Github, Heart, Menu, Scale, X } from "lucide-react";
+import { Github, Menu, X } from "lucide-react";
+import mtnDashboard from "@/assets/mtn-customer-churn-dashboard.png.asset.json";
+import telecomDashboard from "@/assets/telecom-customer-analytics-dashboard.png.asset.json";
 import capturedCSS from "../styles/site.css?raw";
 
 export const Route = createFileRoute("/")({
@@ -397,11 +399,11 @@ type PortfolioProject = {
   description: string;
   longDescription: string;
   category: string;
-  icon: "book" | "scale" | "heart";
+  image: string;
+  imageAlt: string;
   technologies: string[];
   features: string[];
   code: string;
-  demo: string;
 };
 
 function ImportedSectionFeaturedProjects() {
@@ -410,37 +412,26 @@ function ImportedSectionFeaturedProjects() {
   const dialogRef = useRef<HTMLDivElement>(null);
   const projects: PortfolioProject[] = [
     {
-      title: "Tutorial Booking System",
-      description: "A comprehensive web-based platform for managing tutorial sessions and bookings for students and tutors.",
-      longDescription: "A full-stack web application designed to streamline the process of booking and managing tutorial sessions. The system allows students to search for available tutors, book sessions, and manage their learning schedule, while tutors can set their availability and track their sessions.",
-      category: "Web Development",
-      icon: "book",
-      technologies: ["Python", "Django", "HTML", "CSS", "JavaScript", "SQLite"],
-      features: ["User authentication and authorization", "Real-time booking system", "Payment integration", "Email notifications", "Rating and review system", "Calendar integration"],
-      code: "https://github.com/Sellomphoo",
-      demo: "https://tutorial-booking-demo.netlify.app",
+      title: "MTN Customer Churn Analytics Dashboard",
+      description: "Power BI analysis of 496 customers, churn drivers, and revenue, with a carefully validated customer and purchase data model.",
+      longDescription: "An end-to-end Power BI project exploring customer churn in an MTN telecom dataset. The analysis separates customer-level details from purchase lines to avoid inflated counts, then checks key figures against the raw data: 496 customers, 146 churned customers, and 199,348,200 in revenue.",
+      category: "Power BI · Customer Churn",
+      image: mtnDashboard.url,
+      imageAlt: "MTN customer churn analytics dashboard overview",
+      technologies: ["Power BI", "Power Query", "DAX", "Microsoft Excel"],
+      features: ["Churn and revenue KPIs", "Churn reasons and tenure analysis", "Customer age and satisfaction breakdown", "Monthly revenue analysis", "Gender slicer", "Validated customer and purchase model"],
+      code: "https://github.com/Sellomphoo/MTN-Customer-Churn-Analytics-Dashboard---Power-BI",
     },
     {
-      title: "Legal Assistance Booking App",
-      description: "Mobile-responsive application connecting clients with legal professionals for consultation and assistance.",
-      longDescription: "A sophisticated booking platform that bridges the gap between clients seeking legal assistance and qualified legal professionals. The application features secure communication, document sharing, and appointment management capabilities.",
-      category: "Full-Stack Development",
-      icon: "scale",
-      technologies: ["JavaScript", "React", "Node.js", "MongoDB", "Express"],
-      features: ["Client-lawyer matching system", "Secure document upload", "Video consultation integration", "Case management dashboard", "Billing and invoicing"],
-      code: "https://github.com/Sellomphoo",
-      demo: "https://legal-assistance-demo.netlify.app",
-    },
-    {
-      title: "HerCycle Sanitary Services Donation Platform",
-      description: "Higher Institutions-driven platform facilitating donations and distribution of sanitary products to underserved students.",
-      longDescription: "A social impact application designed to address period poverty by connecting donors with students in need. The platform includes inventory management, distribution tracking, and impact analytics to ensure effective resource allocation.",
-      category: "Social Impact",
-      icon: "heart",
-      technologies: ["Python", "Django", "PostgreSQL", "HTML", "CSS", "JavaScript"],
-      features: ["Donation tracking system", "Inventory management", "Impact analytics dashboard", "Volunteer coordination", "SMS notifications"],
-      code: "https://github.com/Sellomphoo",
-      demo: "https://sanitary-donation-demo.netlify.app",
+      title: "Telecom Customer Analytics Dashboard",
+      description: "A Power BI profile of 7,043 telecom customers, highlighting revenue, contracts, services, payment methods, and customer locations.",
+      longDescription: "An interactive Power BI dashboard built to understand a telecom company's customer base and revenue. It examines customer demographics, contract types, internet services, payment preferences, and geographic distribution, with data profiling and revenue reconciliation guiding the analysis.",
+      category: "Power BI · Customer Analytics",
+      image: telecomDashboard.url,
+      imageAlt: "Telecom customer analytics dashboard overview",
+      technologies: ["Power BI Desktop", "Power Query", "DAX"],
+      features: ["Customer and revenue KPI cards", "Age, gender, and marital status profile", "Revenue by contract and internet type", "Payment method breakdown", "Customer location map", "Gender and customer status slicers"],
+      code: "https://github.com/Sellomphoo/Telecom-Customer-Analytics-Dashboard-Power-BI-",
     },
   ];
 
@@ -465,30 +456,24 @@ function ImportedSectionFeaturedProjects() {
           <h2 className="text-display mb-4 text-4xl font-bold text-gradient sm:text-5xl lg:text-6xl">Featured Projects</h2>
           <p className="mx-auto max-w-3xl text-lg text-muted-foreground">Explore some of my recent work and the technologies I've used to bring ideas to life</p>
         </div>
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
           {projects.map((project) => (
             <article key={project.title} className="group h-full overflow-hidden rounded-2xl border border-border/60 bg-card/80 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-lg">
-              <div className="p-6 pb-4">
-                <div className="mb-4 flex items-center gap-3">
-                  <span className="rounded-lg bg-secondary p-2 text-primary" aria-hidden="true">
-                    {project.icon === "book" ? <BookOpen className="h-6 w-6" /> : project.icon === "scale" ? <Scale className="h-6 w-6" /> : <Heart className="h-6 w-6" />}
-                  </span>
-                  <span className="text-sm font-medium text-muted-foreground">{project.category}</span>
+              <button type="button" className="block w-full overflow-hidden bg-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring" aria-haspopup="dialog" aria-label={`View details for ${project.title}`} onClick={(event) => { projectTriggerRef.current = event.currentTarget; setSelectedProject(project); }}>
+                <img className="aspect-[16/10] w-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.02]" src={project.image} alt={project.imageAlt} loading="lazy" decoding="async" />
+              </button>
+              <div className="space-y-4 p-6">
+                <div>
+                  <span className="mb-2 block text-sm font-medium text-muted-foreground">{project.category}</span>
+                  <button type="button" className="text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring" aria-haspopup="dialog" aria-label={`View details for ${project.title}`} onClick={(event) => { projectTriggerRef.current = event.currentTarget; setSelectedProject(project); }}>
+                    <h3 className="text-xl font-semibold leading-tight transition-colors group-hover:text-primary">{project.title}</h3>
+                  </button>
                 </div>
-                <button type="button" className="text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring" aria-haspopup="dialog" aria-label={`View details for ${project.title}`} onClick={(event) => { projectTriggerRef.current = event.currentTarget; setSelectedProject(project); }}>
-                  <h3 className="text-xl font-semibold leading-tight transition-colors group-hover:text-primary">{project.title}</h3>
-                </button>
-              </div>
-              <div className="space-y-4 p-6 pt-0">
                 <p className="text-muted-foreground">{project.description}</p>
                 <div className="flex flex-wrap gap-2">
-                  {project.technologies.slice(0, 3).map((technology) => <span key={technology} className="rounded bg-secondary px-2 py-1 text-xs font-medium text-secondary-foreground">{technology}</span>)}
-                  {project.technologies.length > 3 && <span className="rounded bg-secondary px-2 py-1 text-xs font-medium text-secondary-foreground">+{project.technologies.length - 3} more</span>}
+                  {project.technologies.map((technology) => <span key={technology} className="rounded bg-secondary px-2 py-1 text-xs font-medium text-secondary-foreground">{technology}</span>)}
                 </div>
-                <div className="flex flex-wrap gap-3 pt-2">
-                  <a className="inline-flex h-9 items-center justify-center gap-2 rounded-md border border-input bg-background px-3 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground" href={project.code} target="_blank" rel="noopener noreferrer"><Github className="h-4 w-4" aria-hidden="true" />Code</a>
-                  <a className="inline-flex h-9 items-center justify-center gap-2 rounded-md border border-input bg-background px-3 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground" href={project.demo} target="_blank" rel="noopener noreferrer"><ExternalLink className="h-4 w-4" aria-hidden="true" />Demo</a>
-                </div>
+                <a className="inline-flex h-9 items-center justify-center gap-2 rounded-md border border-input bg-background px-3 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground" href={project.code} target="_blank" rel="noopener noreferrer"><Github className="h-4 w-4" aria-hidden="true" />GitHub repository</a>
               </div>
             </article>
           ))}
@@ -508,7 +493,6 @@ function ImportedSectionFeaturedProjects() {
             <div className="mb-8 flex flex-wrap gap-2">{selectedProject.technologies.map((technology) => <span key={technology} className="rounded-full bg-secondary px-3 py-1 text-sm font-medium text-secondary-foreground">{technology}</span>)}</div>
             <div className="flex flex-wrap gap-3">
               <a className="inline-flex h-10 items-center justify-center gap-2 rounded-md bg-primary px-4 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90" href={selectedProject.code} target="_blank" rel="noopener noreferrer"><Github className="h-4 w-4" aria-hidden="true" />View Source Code</a>
-              <a className="inline-flex h-10 items-center justify-center gap-2 rounded-md border border-input bg-background px-4 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground" href={selectedProject.demo} target="_blank" rel="noopener noreferrer"><ExternalLink className="h-4 w-4" aria-hidden="true" />Live Demo</a>
             </div>
           </div>
         </div>
