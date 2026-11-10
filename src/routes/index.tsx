@@ -1,7 +1,7 @@
 import type { CSSProperties } from "react";
 import { useEffect, useRef, useState } from "react";
 import { createFileRoute } from "@tanstack/react-router";
-import { Menu, X } from "lucide-react";
+import { BookOpen, ExternalLink, Github, Heart, Menu, Scale, X } from "lucide-react";
 import capturedCSS from "../styles/site.css?raw";
 
 export const Route = createFileRoute("/")({
@@ -398,106 +398,127 @@ function ImportedSectionAboutMe() {
   );
 }
 
+type PortfolioProject = {
+  title: string;
+  description: string;
+  longDescription: string;
+  category: string;
+  icon: "book" | "scale" | "heart";
+  technologies: string[];
+  features: string[];
+  code: string;
+  demo: string;
+};
+
 function ImportedSectionFeaturedProjects() {
+  const [selectedProject, setSelectedProject] = useState<PortfolioProject | null>(null);
+  const projectTriggerRef = useRef<HTMLButtonElement>(null);
+  const dialogRef = useRef<HTMLDivElement>(null);
+  const projects: PortfolioProject[] = [
+    {
+      title: "Tutorial Booking System",
+      description: "A comprehensive web-based platform for managing tutorial sessions and bookings for students and tutors.",
+      longDescription: "A full-stack web application designed to streamline the process of booking and managing tutorial sessions. The system allows students to search for available tutors, book sessions, and manage their learning schedule, while tutors can set their availability and track their sessions.",
+      category: "Web Development",
+      icon: "book",
+      technologies: ["Python", "Django", "HTML", "CSS", "JavaScript", "SQLite"],
+      features: ["User authentication and authorization", "Real-time booking system", "Payment integration", "Email notifications", "Rating and review system", "Calendar integration"],
+      code: "https://github.com/Sellomphoo",
+      demo: "https://tutorial-booking-demo.netlify.app",
+    },
+    {
+      title: "Legal Assistance Booking App",
+      description: "Mobile-responsive application connecting clients with legal professionals for consultation and assistance.",
+      longDescription: "A sophisticated booking platform that bridges the gap between clients seeking legal assistance and qualified legal professionals. The application features secure communication, document sharing, and appointment management capabilities.",
+      category: "Full-Stack Development",
+      icon: "scale",
+      technologies: ["JavaScript", "React", "Node.js", "MongoDB", "Express"],
+      features: ["Client-lawyer matching system", "Secure document upload", "Video consultation integration", "Case management dashboard", "Billing and invoicing"],
+      code: "https://github.com/Sellomphoo",
+      demo: "https://legal-assistance-demo.netlify.app",
+    },
+    {
+      title: "HerCycle Sanitary Services Donation Platform",
+      description: "Higher Institutions-driven platform facilitating donations and distribution of sanitary products to underserved students.",
+      longDescription: "A social impact application designed to address period poverty by connecting donors with students in need. The platform includes inventory management, distribution tracking, and impact analytics to ensure effective resource allocation.",
+      category: "Social Impact",
+      icon: "heart",
+      technologies: ["Python", "Django", "PostgreSQL", "HTML", "CSS", "JavaScript"],
+      features: ["Donation tracking system", "Inventory management", "Impact analytics dashboard", "Volunteer coordination", "SMS notifications"],
+      code: "https://github.com/Sellomphoo",
+      demo: "https://sanitary-donation-demo.netlify.app",
+    },
+  ];
+
+  useEffect(() => {
+    if (!selectedProject) return;
+    dialogRef.current?.focus();
+    const closeOnEscape = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setSelectedProject(null);
+    };
+    window.addEventListener("keydown", closeOnEscape);
+    return () => {
+      window.removeEventListener("keydown", closeOnEscape);
+      projectTriggerRef.current?.focus();
+    };
+  }, [selectedProject]);
+
   return (
-    <section className={"relative \x70y-32 \x62g-background [overflow:hidden]"}>
-      <div className={"pointer-events-none absolute top-20 left-0 right-0 text-[18vw] \x66ont-bold \x74ext-foreground/[\x30.\x303] \x6ceading-none whitespace-nowrap select-none [letter-spacing:-0.05em]"} style={{ fontFamily: "\"Space Grotesk\", sans-serif", translate: "none", rotate: "none", scale: "none", transform: "translate(0px, 0px)" } as CSSProperties} aria-hidden="true">WORK · 2024</div>
-      <div className={"relative max-w-7xl \x6dx-auto \x70x-4 \x73m:\x70x-6 \x6cg:\x70x-8"}>
-        <div className={"mb-16 [&]:text-center"}>
-          <h2 className={"\x74ext-display \x74ext-4xl \x73m:\x74ext-5xl \x6cg:\x74ext-6xl \x66ont-bold mb-4 \x74ext-gradient [letter-spacing:-0.04em]"} style={{ translate: "none", rotate: "none", scale: "none", opacity: "1", transform: "translate(-12px, 24px)" } as CSSProperties}>Featured Projects</h2>
-          <p className={"\x74ext-lg text-muted-foreground \x6dx-auto [max-width:48rem]"} style={{ translate: "none", rotate: "none", scale: "none", opacity: "1", transform: "translate(0px, 14px)" } as CSSProperties}>Explore some of my recent work and the technologies I've used to bring ideas to life</p>
+    <section className="relative overflow-hidden bg-background py-32">
+      <div className="pointer-events-none absolute left-0 right-0 top-20 select-none whitespace-nowrap text-[18vw] font-bold leading-none text-foreground/[0.03]" style={{ fontFamily: "\"Space Grotesk\", sans-serif" }} aria-hidden="true">WORK · 2024</div>
+      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="mb-16 text-center">
+          <h2 className="text-display mb-4 text-4xl font-bold text-gradient sm:text-5xl lg:text-6xl">Featured Projects</h2>
+          <p className="mx-auto max-w-3xl text-lg text-muted-foreground">Explore some of my recent work and the technologies I've used to bring ideas to life</p>
         </div>
-        <div className={"grid grid-cols-1 \x6dd:\x67rid-cols-2 \x6cg:\x67rid-cols-3 gap-8"}>
-          <div className={"relative rounded-2xl \x62order \x62order-border/\x360 \x62g-card/\x380 \x62ackdrop-blur-sm \x73hadow-[\x30_1px_2px_rgba(\x30,\x30,\x30,\x30.\x304),\x30_8px_24px_-12px_rgba(\x30,\x30,\x30,\x30.\x315)] transition-all \x64uration-300 \x68over:\x2dtranslate-y-1 \x68over:\x62order-primary/\x340 \x68over:\x73hadow-[\x30_4px_8px_rgba(\x30,\x30,\x30,\x30.\x306),\x30_20px_40px_-16px_hsl(\x76ar(\x2d-primary)/\x30.\x325)] h-full [overflow:hidden]"} style={{ translate: "none", rotate: "none", scale: "none", opacity: "0.9784", transform: "translate(0px, 28px) scale(0.98, 0.98)" } as CSSProperties}>
-            <div className={"text-card-foreground project-card cursor-pointer group h-full \x62order-0 bg-transparent \x73hadow-none rounded-2xl"} style={{ animationDelay: "0s" } as CSSProperties}>
-              <div className={"flex flex-col \x73pace-y-1.\x35 p-6"}>
-                <div className={"flex items-center \x73pace-x-3 mb-4"}>
-                  <div className={"p-2 rounded-lg \x62g-skill-bg"}>
-                    <svg className="h-6 w-6 text-primary" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                      <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H19a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H6.5a1 1 0 0 1 0-5H20" />
-                    </svg>
-                  </div>
-                  <span className={"\x74ext-sm text-muted-foreground \x66ont-medium"}>Web Development</span>
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+          {projects.map((project) => (
+            <article key={project.title} className="group h-full overflow-hidden rounded-2xl border border-border/60 bg-card/80 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-lg">
+              <div className="p-6 pb-4">
+                <div className="mb-4 flex items-center gap-3">
+                  <span className="rounded-lg bg-secondary p-2 text-primary" aria-hidden="true">
+                    {project.icon === "book" ? <BookOpen className="h-6 w-6" /> : project.icon === "scale" ? <Scale className="h-6 w-6" /> : <Heart className="h-6 w-6" />}
+                  </span>
+                  <span className="text-sm font-medium text-muted-foreground">{project.category}</span>
                 </div>
-                <h3 className={"\x74ext-2xl \x66ont-semibold \x6ceading-none \x67roup-hover:\x74ext-primary transition-colors \x64uration-200 [letter-spacing:-0.025em]"}>Tutorial Booking System</h3>
+                <button type="button" className="text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring" aria-haspopup="dialog" aria-label={`View details for ${project.title}`} onClick={(event) => { projectTriggerRef.current = event.currentTarget; setSelectedProject(project); }}>
+                  <h3 className="text-xl font-semibold leading-tight transition-colors group-hover:text-primary">{project.title}</h3>
+                </button>
               </div>
-              <div className={"p-6 pt-0 \x73pace-y-4"}>
-                <p className="text-muted-foreground">A comprehensive web-based platform for managing tutorial sessions and bookings for students and tutors.</p>
-                <div className={"flex gap-2 [&]:flex-wrap"}>
-                  <span className={"\x70x-2 \x70y-1 \x62g-secondary text-secondary-foreground \x72ounded \x74ext-xs \x66ont-medium"}>Python</span>
-                  <span className={"\x70x-2 \x70y-1 \x62g-secondary text-secondary-foreground \x72ounded \x74ext-xs \x66ont-medium"}>Django</span>
-                  <span className={"\x70x-2 \x70y-1 \x62g-secondary text-secondary-foreground \x72ounded \x74ext-xs \x66ont-medium"}>HTML</span>
-                  <span className={"\x70x-2 \x70y-1 \x62g-secondary text-secondary-foreground \x72ounded \x74ext-xs \x66ont-medium"}>+3 more</span>
+              <div className="space-y-4 p-6 pt-0">
+                <p className="text-muted-foreground">{project.description}</p>
+                <div className="flex flex-wrap gap-2">
+                  {project.technologies.slice(0, 3).map((technology) => <span key={technology} className="rounded bg-secondary px-2 py-1 text-xs font-medium text-secondary-foreground">{technology}</span>)}
+                  {project.technologies.length > 3 && <span className="rounded bg-secondary px-2 py-1 text-xs font-medium text-secondary-foreground">+{project.technologies.length - 3} more</span>}
                 </div>
-                <div className={"flex \x73pace-x-3 pt-4"}>
-                  <button className={"inline-flex items-center justify-center gap-2 whitespace-nowrap \x74ext-sm \x66ont-medium \x72ing-offset-background transition-colors \x66ocus-visible:\x6futline-none \x66ocus-visible:\x72ing-2 \x66ocus-visible:\x72ing-ring \x66ocus-visible:\x72ing-offset-2 \x64isabled:\x70ointer-events-none disabled:opacity-50 [&\x5fsvg]:\x70ointer-events-none [&\x5fsvg]:\x73ize-4 [&\x5fsvg]:\x73hrink-0 \x62order \x62order-input \x62g-background \x68over:\x62g-accent \x68over:\x74ext-accent-foreground h-9 rounded-md \x70x-3"}><svg className="h-4 w-4 mr-2" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4" /><path d="M9 18c-4.51 2-5-2-7-2" /></svg>Code</button>
-                  <button className={"inline-flex items-center justify-center gap-2 whitespace-nowrap \x74ext-sm \x66ont-medium \x72ing-offset-background transition-colors \x66ocus-visible:\x6futline-none \x66ocus-visible:\x72ing-2 \x66ocus-visible:\x72ing-ring \x66ocus-visible:\x72ing-offset-2 \x64isabled:\x70ointer-events-none disabled:opacity-50 [&\x5fsvg]:\x70ointer-events-none [&\x5fsvg]:\x73ize-4 [&\x5fsvg]:\x73hrink-0 \x62order \x62order-input \x62g-background \x68over:\x62g-accent \x68over:\x74ext-accent-foreground h-9 rounded-md \x70x-3"}><svg className="h-4 w-4 mr-2" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M15 3h6v6" /><path d="M10 14 21 3" /><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" /></svg>Demo</button>
+                <div className="flex flex-wrap gap-3 pt-2">
+                  <a className="inline-flex h-9 items-center justify-center gap-2 rounded-md border border-input bg-background px-3 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground" href={project.code} target="_blank" rel="noopener noreferrer"><Github className="h-4 w-4" aria-hidden="true" />Code</a>
+                  <a className="inline-flex h-9 items-center justify-center gap-2 rounded-md border border-input bg-background px-3 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground" href={project.demo} target="_blank" rel="noopener noreferrer"><ExternalLink className="h-4 w-4" aria-hidden="true" />Demo</a>
                 </div>
               </div>
-            </div>
-          </div>
-          <div className={"relative rounded-2xl \x62order \x62order-border/\x360 \x62g-card/\x380 \x62ackdrop-blur-sm \x73hadow-[\x30_1px_2px_rgba(\x30,\x30,\x30,\x30.\x304),\x30_8px_24px_-12px_rgba(\x30,\x30,\x30,\x30.\x315)] transition-all \x64uration-300 \x68over:\x2dtranslate-y-1 \x68over:\x62order-primary/\x340 \x68over:\x73hadow-[\x30_4px_8px_rgba(\x30,\x30,\x30,\x30.\x306),\x30_20px_40px_-16px_hsl(\x76ar(\x2d-primary)/\x30.\x325)] h-full [overflow:hidden]"} style={{ translate: "none", rotate: "none", scale: "none", opacity: "0", transform: "translate(0px, 28px) scale(0.98, 0.98)" } as CSSProperties}>
-            <div className={"text-card-foreground project-card cursor-pointer group h-full \x62order-0 bg-transparent \x73hadow-none rounded-2xl"} style={{ animationDelay: "0.1s" } as CSSProperties}>
-              <div className={"flex flex-col \x73pace-y-1.\x35 p-6"}>
-                <div className={"flex items-center \x73pace-x-3 mb-4"}>
-                  <div className={"p-2 rounded-lg \x62g-skill-bg"}>
-                    <svg className="h-6 w-6 text-primary" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                      <path d="m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z" />
-                      <path d="m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z" />
-                      <path d="M7 21h10" />
-                      <path d="M12 3v18" />
-                      <path d="M3 7h2c2 0 5-1 7-2 2 1 5 2 7 2h2" />
-                    </svg>
-                  </div>
-                  <span className={"\x74ext-sm text-muted-foreground \x66ont-medium"}>Full-Stack Development</span>
-                </div>
-                <h3 className={"\x74ext-2xl \x66ont-semibold \x6ceading-none \x67roup-hover:\x74ext-primary transition-colors \x64uration-200 [letter-spacing:-0.025em]"}>Legal Assistance Booking App</h3>
-              </div>
-              <div className={"p-6 pt-0 \x73pace-y-4"}>
-                <p className="text-muted-foreground">Mobile-responsive application connecting clients with legal professionals for consultation and assistance.</p>
-                <div className={"flex gap-2 [&]:flex-wrap"}>
-                  <span className={"\x70x-2 \x70y-1 \x62g-secondary text-secondary-foreground \x72ounded \x74ext-xs \x66ont-medium"}>JavaScript</span>
-                  <span className={"\x70x-2 \x70y-1 \x62g-secondary text-secondary-foreground \x72ounded \x74ext-xs \x66ont-medium"}>React</span>
-                  <span className={"\x70x-2 \x70y-1 \x62g-secondary text-secondary-foreground \x72ounded \x74ext-xs \x66ont-medium"}>Node.js</span>
-                  <span className={"\x70x-2 \x70y-1 \x62g-secondary text-secondary-foreground \x72ounded \x74ext-xs \x66ont-medium"}>+2 more</span>
-                </div>
-                <div className={"flex \x73pace-x-3 pt-4"}>
-                  <button className={"inline-flex items-center justify-center gap-2 whitespace-nowrap \x74ext-sm \x66ont-medium \x72ing-offset-background transition-colors \x66ocus-visible:\x6futline-none \x66ocus-visible:\x72ing-2 \x66ocus-visible:\x72ing-ring \x66ocus-visible:\x72ing-offset-2 \x64isabled:\x70ointer-events-none disabled:opacity-50 [&\x5fsvg]:\x70ointer-events-none [&\x5fsvg]:\x73ize-4 [&\x5fsvg]:\x73hrink-0 \x62order \x62order-input \x62g-background \x68over:\x62g-accent \x68over:\x74ext-accent-foreground h-9 rounded-md \x70x-3"}><svg className="h-4 w-4 mr-2" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4" /><path d="M9 18c-4.51 2-5-2-7-2" /></svg>Code</button>
-                  <button className={"inline-flex items-center justify-center gap-2 whitespace-nowrap \x74ext-sm \x66ont-medium \x72ing-offset-background transition-colors \x66ocus-visible:\x6futline-none \x66ocus-visible:\x72ing-2 \x66ocus-visible:\x72ing-ring \x66ocus-visible:\x72ing-offset-2 \x64isabled:\x70ointer-events-none disabled:opacity-50 [&\x5fsvg]:\x70ointer-events-none [&\x5fsvg]:\x73ize-4 [&\x5fsvg]:\x73hrink-0 \x62order \x62order-input \x62g-background \x68over:\x62g-accent \x68over:\x74ext-accent-foreground h-9 rounded-md \x70x-3"}><svg className="h-4 w-4 mr-2" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M15 3h6v6" /><path d="M10 14 21 3" /><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" /></svg>Demo</button>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className={"relative rounded-2xl \x62order \x62order-border/\x360 \x62g-card/\x380 \x62ackdrop-blur-sm \x73hadow-[\x30_1px_2px_rgba(\x30,\x30,\x30,\x30.\x304),\x30_8px_24px_-12px_rgba(\x30,\x30,\x30,\x30.\x315)] transition-all \x64uration-300 \x68over:\x2dtranslate-y-1 \x68over:\x62order-primary/\x340 \x68over:\x73hadow-[\x30_4px_8px_rgba(\x30,\x30,\x30,\x30.\x306),\x30_20px_40px_-16px_hsl(\x76ar(\x2d-primary)/\x30.\x325)] h-full [overflow:hidden]"} style={{ translate: "none", rotate: "none", scale: "none", opacity: "0", transform: "translate(0px, 28px) scale(0.98, 0.98)" } as CSSProperties}>
-            <div className={"text-card-foreground project-card cursor-pointer group h-full \x62order-0 bg-transparent \x73hadow-none rounded-2xl"} style={{ animationDelay: "0.2s" } as CSSProperties}>
-              <div className={"flex flex-col \x73pace-y-1.\x35 p-6"}>
-                <div className={"flex items-center \x73pace-x-3 mb-4"}>
-                  <div className={"p-2 rounded-lg \x62g-skill-bg"}>
-                    <svg className="h-6 w-6 text-primary" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                      <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z" />
-                    </svg>
-                  </div>
-                  <span className={"\x74ext-sm text-muted-foreground \x66ont-medium"}>Social Impact</span>
-                </div>
-                <h3 className={"\x74ext-2xl \x66ont-semibold \x6ceading-none \x67roup-hover:\x74ext-primary transition-colors \x64uration-200 [letter-spacing:-0.025em]"}>HerCycle Sanitary Services Donation Platform</h3>
-              </div>
-              <div className={"p-6 pt-0 \x73pace-y-4"}>
-                <p className="text-muted-foreground">Higher Institutions-driven platform facilitating donations and distribution of sanitary products to underserved students.</p>
-                <div className={"flex gap-2 [&]:flex-wrap"}>
-                  <span className={"\x70x-2 \x70y-1 \x62g-secondary text-secondary-foreground \x72ounded \x74ext-xs \x66ont-medium"}>Python</span>
-                  <span className={"\x70x-2 \x70y-1 \x62g-secondary text-secondary-foreground \x72ounded \x74ext-xs \x66ont-medium"}>Django</span>
-                  <span className={"\x70x-2 \x70y-1 \x62g-secondary text-secondary-foreground \x72ounded \x74ext-xs \x66ont-medium"}>PostgreSQL</span>
-                  <span className={"\x70x-2 \x70y-1 \x62g-secondary text-secondary-foreground \x72ounded \x74ext-xs \x66ont-medium"}>+3 more</span>
-                </div>
-                <div className={"flex \x73pace-x-3 pt-4"}>
-                  <button className={"inline-flex items-center justify-center gap-2 whitespace-nowrap \x74ext-sm \x66ont-medium \x72ing-offset-background transition-colors \x66ocus-visible:\x6futline-none \x66ocus-visible:\x72ing-2 \x66ocus-visible:\x72ing-ring \x66ocus-visible:\x72ing-offset-2 \x64isabled:\x70ointer-events-none disabled:opacity-50 [&\x5fsvg]:\x70ointer-events-none [&\x5fsvg]:\x73ize-4 [&\x5fsvg]:\x73hrink-0 \x62order \x62order-input \x62g-background \x68over:\x62g-accent \x68over:\x74ext-accent-foreground h-9 rounded-md \x70x-3"}><svg className="h-4 w-4 mr-2" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4" /><path d="M9 18c-4.51 2-5-2-7-2" /></svg>Code</button>
-                  <button className={"inline-flex items-center justify-center gap-2 whitespace-nowrap \x74ext-sm \x66ont-medium \x72ing-offset-background transition-colors \x66ocus-visible:\x6futline-none \x66ocus-visible:\x72ing-2 \x66ocus-visible:\x72ing-ring \x66ocus-visible:\x72ing-offset-2 \x64isabled:\x70ointer-events-none disabled:opacity-50 [&\x5fsvg]:\x70ointer-events-none [&\x5fsvg]:\x73ize-4 [&\x5fsvg]:\x73hrink-0 \x62order \x62order-input \x62g-background \x68over:\x62g-accent \x68over:\x74ext-accent-foreground h-9 rounded-md \x70x-3"}><svg className="h-4 w-4 mr-2" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M15 3h6v6" /><path d="M10 14 21 3" /><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" /></svg>Demo</button>
-                </div>
-              </div>
-            </div>
-          </div>
+            </article>
+          ))}
         </div>
       </div>
+      {selectedProject && (
+        <div className="fixed inset-0 z-[100] flex items-center justify-center bg-background/80 p-4 backdrop-blur-sm" onMouseDown={(event) => { if (event.target === event.currentTarget) setSelectedProject(null); }}>
+          <div ref={dialogRef} role="dialog" aria-modal="true" aria-labelledby="project-dialog-title" tabIndex={-1} className="relative max-h-[90vh] w-full max-w-3xl overflow-y-auto rounded-xl border border-border bg-card p-6 shadow-xl sm:p-8">
+            <button type="button" className="absolute right-4 top-4 inline-flex h-9 w-9 items-center justify-center rounded-md text-muted-foreground transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring" aria-label="Close project details" onClick={() => setSelectedProject(null)}><X className="h-5 w-5" aria-hidden="true" /></button>
+            <h3 id="project-dialog-title" className="mb-4 pr-12 text-2xl font-semibold">{selectedProject.title}</h3>
+            <p className="mb-8 text-lg leading-relaxed text-muted-foreground">{selectedProject.longDescription}</p>
+            <h4 className="mb-3 text-lg font-semibold">Key Features</h4>
+            <ul className="mb-8 grid grid-cols-1 gap-3 sm:grid-cols-2">
+              {selectedProject.features.map((feature) => <li key={feature} className="flex items-start gap-3 text-muted-foreground"><span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-primary" aria-hidden="true" />{feature}</li>)}
+            </ul>
+            <h4 className="mb-3 text-lg font-semibold">Technologies Used</h4>
+            <div className="mb-8 flex flex-wrap gap-2">{selectedProject.technologies.map((technology) => <span key={technology} className="rounded-full bg-secondary px-3 py-1 text-sm font-medium text-secondary-foreground">{technology}</span>)}</div>
+            <div className="flex flex-wrap gap-3">
+              <a className="inline-flex h-10 items-center justify-center gap-2 rounded-md bg-primary px-4 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90" href={selectedProject.code} target="_blank" rel="noopener noreferrer"><Github className="h-4 w-4" aria-hidden="true" />View Source Code</a>
+              <a className="inline-flex h-10 items-center justify-center gap-2 rounded-md border border-input bg-background px-4 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground" href={selectedProject.demo} target="_blank" rel="noopener noreferrer"><ExternalLink className="h-4 w-4" aria-hidden="true" />Live Demo</a>
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   );
 }
