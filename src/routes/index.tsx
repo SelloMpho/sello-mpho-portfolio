@@ -49,7 +49,7 @@ function Index() {
             <div className={"[&]:min-h-[650px]"} id="skills" aria-busy="false">
               <ImportedSectionSkillsTechnologies />
             </div>
-            <div className={"min-h-[1200px] \x6cg:\x6din-h-[\x31000px]"} id="certificates" aria-busy="false">
+            <div className={"min-h-[1200px] \x6cg:\x6din-h-[\x31064px]"} id="certificates" aria-busy="false">
               <ImportedSectionCertificatesAwards />
             </div>
             <div className={"min-h-[2000px] \x6cg:\x6din-h-[\x31954px]"} id="education" aria-busy="false">
