@@ -682,6 +682,7 @@ function ImportedSectionCertificatesAwards() {
             <div className={"relative rounded-2xl \x62order \x62order-border/\x360 \x62g-card/\x380 \x62ackdrop-blur-sm \x73hadow-[\x30_1px_2px_rgba(\x30,\x30,\x30,\x30.\x304),\x30_8px_24px_-12px_rgba(\x30,\x30,\x30,\x30.\x315)] transition-all \x64uration-300 \x68over:\x2dtranslate-y-1 \x68over:\x62order-primary/\x340 \x68over:\x73hadow-[\x30_4px_8px_rgba(\x30,\x30,\x30,\x30.\x306),\x30_20px_40px_-16px_hsl(\x76ar(\x2d-primary)/\x30.\x325)] group h-full [overflow:hidden]"}>
               <a className="block" href="/certificates/CLOUD_DATABASE.pdf" rel="noopener noreferrer" target="_blank">
                 <div className={"relative w-full h-56 \x62g-muted [overflow:hidden]"}>
+                  <img className="absolute inset-0 h-full w-full object-cover object-top" src="/site-assets/CLOUD_DATABASE.jpg" alt="CLOUD DATABASE preview" loading="lazy" decoding="async" />
                   <div className={"absolute inset-0 bg-transparent \x67roup-hover:\x62g-foreground/\x35 transition-colors \x64uration-300"} />
                 </div>
                 <div className="p-4 flex items-center justify-between gap-2">
@@ -697,6 +698,7 @@ function ImportedSectionCertificatesAwards() {
             <div className={"relative rounded-2xl \x62order \x62order-border/\x360 \x62g-card/\x380 \x62ackdrop-blur-sm \x73hadow-[\x30_1px_2px_rgba(\x30,\x30,\x30,\x30.\x304),\x30_8px_24px_-12px_rgba(\x30,\x30,\x30,\x30.\x315)] transition-all \x64uration-300 \x68over:\x2dtranslate-y-1 \x68over:\x62order-primary/\x340 \x68over:\x73hadow-[\x30_4px_8px_rgba(\x30,\x30,\x30,\x30.\x306),\x30_20px_40px_-16px_hsl(\x76ar(\x2d-primary)/\x30.\x325)] group h-full [overflow:hidden]"}>
               <a className="block" href="/certificates/DataCertificate.pdf" rel="noopener noreferrer" target="_blank">
                 <div className={"relative w-full h-56 \x62g-muted [overflow:hidden]"}>
+                  <img className="absolute inset-0 h-full w-full object-cover object-top" src="/site-assets/DataCertificate.jpg" alt="DataCertificate preview" loading="lazy" decoding="async" />
                   <div className={"absolute inset-0 bg-transparent \x67roup-hover:\x62g-foreground/\x35 transition-colors \x64uration-300"} />
                 </div>
                 <div className="p-4 flex items-center justify-between gap-2">
@@ -712,6 +714,7 @@ function ImportedSectionCertificatesAwards() {
             <div className={"relative rounded-2xl \x62order \x62order-border/\x360 \x62g-card/\x380 \x62ackdrop-blur-sm \x73hadow-[\x30_1px_2px_rgba(\x30,\x30,\x30,\x30.\x304),\x30_8px_24px_-12px_rgba(\x30,\x30,\x30,\x30.\x315)] transition-all \x64uration-300 \x68over:\x2dtranslate-y-1 \x68over:\x62order-primary/\x340 \x68over:\x73hadow-[\x30_4px_8px_rgba(\x30,\x30,\x30,\x30.\x306),\x30_20px_40px_-16px_hsl(\x76ar(\x2d-primary)/\x30.\x325)] group h-full [overflow:hidden]"}>
               <a className="block" href="/certificates/eCertificate.pdf" rel="noopener noreferrer" target="_blank">
                 <div className={"relative w-full h-56 \x62g-muted [overflow:hidden]"}>
+                  <img className="absolute inset-0 h-full w-full object-cover object-top" src="/site-assets/eCertificate.jpg" alt="eCertificate preview" loading="lazy" decoding="async" />
                   <div className={"absolute inset-0 bg-transparent \x67roup-hover:\x62g-foreground/\x35 transition-colors \x64uration-300"} />
                 </div>
                 <div className="p-4 flex items-center justify-between gap-2">
@@ -727,6 +730,7 @@ function ImportedSectionCertificatesAwards() {
             <div className={"relative rounded-2xl \x62order \x62order-border/\x360 \x62g-card/\x380 \x62ackdrop-blur-sm \x73hadow-[\x30_1px_2px_rgba(\x30,\x30,\x30,\x30.\x304),\x30_8px_24px_-12px_rgba(\x30,\x30,\x30,\x30.\x315)] transition-all \x64uration-300 \x68over:\x2dtranslate-y-1 \x68over:\x62order-primary/\x340 \x68over:\x73hadow-[\x30_4px_8px_rgba(\x30,\x30,\x30,\x30.\x306),\x30_20px_40px_-16px_hsl(\x76ar(\x2d-primary)/\x30.\x325)] group h-full [overflow:hidden]"}>
               <a className="block" href="/certificates/FNB_App_of_the_Year_Awards_Academy_2025.pdf" rel="noopener noreferrer" target="_blank">
                 <div className={"relative w-full h-56 \x62g-muted [overflow:hidden]"}>
+                  <img className="absolute inset-0 h-full w-full object-cover object-top" src="/site-assets/FNB_App_of_the_Year_Awards_Academy_2025.jpg" alt="FNB App of the Year Awards Academy 2025 preview" loading="lazy" decoding="async" />
                   <div className={"absolute inset-0 bg-transparent \x67roup-hover:\x62g-foreground/\x35 transition-colors \x64uration-300"} />
                 </div>
                 <div className="p-4 flex items-center justify-between gap-2">
@@ -742,6 +746,7 @@ function ImportedSectionCertificatesAwards() {
             <div className={"relative rounded-2xl \x62order \x62order-border/\x360 \x62g-card/\x380 \x62ackdrop-blur-sm \x73hadow-[\x30_1px_2px_rgba(\x30,\x30,\x30,\x30.\x304),\x30_8px_24px_-12px_rgba(\x30,\x30,\x30,\x30.\x315)] transition-all \x64uration-300 \x68over:\x2dtranslate-y-1 \x68over:\x62order-primary/\x340 \x68over:\x73hadow-[\x30_4px_8px_rgba(\x30,\x30,\x30,\x30.\x306),\x30_20px_40px_-16px_hsl(\x76ar(\x2d-primary)/\x30.\x325)] group h-full [overflow:hidden]"}>
               <a className="block" href="/certificates/IBM_First_Certificate.pdf" rel="noopener noreferrer" target="_blank">
                 <div className={"relative w-full h-56 \x62g-muted [overflow:hidden]"}>
+                  <img className="absolute inset-0 h-full w-full object-cover object-top" src="/site-assets/IBM_First_Certificate.jpg" alt="IBM First Certificate preview" loading="lazy" decoding="async" />
                   <div className={"absolute inset-0 bg-transparent \x67roup-hover:\x62g-foreground/\x35 transition-colors \x64uration-300"} />
                 </div>
                 <div className="p-4 flex items-center justify-between gap-2">
@@ -757,6 +762,7 @@ function ImportedSectionCertificatesAwards() {
             <div className={"relative rounded-2xl \x62order \x62order-border/\x360 \x62g-card/\x380 \x62ackdrop-blur-sm \x73hadow-[\x30_1px_2px_rgba(\x30,\x30,\x30,\x30.\x304),\x30_8px_24px_-12px_rgba(\x30,\x30,\x30,\x30.\x315)] transition-all \x64uration-300 \x68over:\x2dtranslate-y-1 \x68over:\x62order-primary/\x340 \x68over:\x73hadow-[\x30_4px_8px_rgba(\x30,\x30,\x30,\x30.\x306),\x30_20px_40px_-16px_hsl(\x76ar(\x2d-primary)/\x30.\x325)] group h-full [overflow:hidden]"}>
               <a className="block" href="/certificates/IBM_PY0101EN_Certificate_IBM_SkillsBuild.pdf" rel="noopener noreferrer" target="_blank">
                 <div className={"relative w-full h-56 \x62g-muted [overflow:hidden]"}>
+                  <img className="absolute inset-0 h-full w-full object-cover object-top" src="/site-assets/IBM_PY0101EN_Certificate_IBM_SkillsBuild.jpg" alt="IBM PY0101EN Certificate IBM SkillsBuild preview" loading="lazy" decoding="async" />
                   <div className={"absolute inset-0 bg-transparent \x67roup-hover:\x62g-foreground/\x35 transition-colors \x64uration-300"} />
                 </div>
                 <div className="p-4 flex items-center justify-between gap-2">
@@ -772,6 +778,7 @@ function ImportedSectionCertificatesAwards() {
             <div className={"relative rounded-2xl \x62order \x62order-border/\x360 \x62g-card/\x380 \x62ackdrop-blur-sm \x73hadow-[\x30_1px_2px_rgba(\x30,\x30,\x30,\x30.\x304),\x30_8px_24px_-12px_rgba(\x30,\x30,\x30,\x30.\x315)] transition-all \x64uration-300 \x68over:\x2dtranslate-y-1 \x68over:\x62order-primary/\x340 \x68over:\x73hadow-[\x30_4px_8px_rgba(\x30,\x30,\x30,\x30.\x306),\x30_20px_40px_-16px_hsl(\x76ar(\x2d-primary)/\x30.\x325)] group h-full [overflow:hidden]"}>
               <a className="block" href="/certificates/Oracle_Analytics_Cloud_22025.pdf" rel="noopener noreferrer" target="_blank">
                 <div className={"relative w-full h-56 \x62g-muted [overflow:hidden]"}>
+                  <img className="absolute inset-0 h-full w-full object-cover object-top" src="/site-assets/Oracle_Analytics_Cloud_22025.jpg" alt="Oracle Analytics Cloud 22025 preview" loading="lazy" decoding="async" />
                   <div className={"absolute inset-0 bg-transparent \x67roup-hover:\x62g-foreground/\x35 transition-colors \x64uration-300"} />
                 </div>
                 <div className="p-4 flex items-center justify-between gap-2">
@@ -787,6 +794,7 @@ function ImportedSectionCertificatesAwards() {
             <div className={"relative rounded-2xl \x62order \x62order-border/\x360 \x62g-card/\x380 \x62ackdrop-blur-sm \x73hadow-[\x30_1px_2px_rgba(\x30,\x30,\x30,\x30.\x304),\x30_8px_24px_-12px_rgba(\x30,\x30,\x30,\x30.\x315)] transition-all \x64uration-300 \x68over:\x2dtranslate-y-1 \x68over:\x62order-primary/\x340 \x68over:\x73hadow-[\x30_4px_8px_rgba(\x30,\x30,\x30,\x30.\x306),\x30_20px_40px_-16px_hsl(\x76ar(\x2d-primary)/\x30.\x325)] group h-full [overflow:hidden]"}>
               <a className="block" href="/certificates/Spark_Fundamentals_I_Certificate.pdf" rel="noopener noreferrer" target="_blank">
                 <div className={"relative w-full h-56 \x62g-muted [overflow:hidden]"}>
+                  <img className="absolute inset-0 h-full w-full object-cover object-top" src="/site-assets/Spark_Fundamentals_I_Certificate.jpg" alt="Spark Fundamentals I Certificate preview" loading="lazy" decoding="async" />
                   <div className={"absolute inset-0 bg-transparent \x67roup-hover:\x62g-foreground/\x35 transition-colors \x64uration-300"} />
                 </div>
                 <div className="p-4 flex items-center justify-between gap-2">
