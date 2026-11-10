@@ -1,10 +1,20 @@
 import type { CSSProperties } from "react";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { createFileRoute } from "@tanstack/react-router";
+import { Menu, X } from "lucide-react";
 import capturedCSS from "../styles/site.css?raw";
 
 export const Route = createFileRoute("/")({
-  head: () => ({ meta: [{ title: "Mpho Sello - ICT Professional Portfolio" }] }),
+  head: () => ({
+    meta: [
+      { title: "Mpho Sello — ICT Professional Portfolio" },
+      { name: "description", content: "Explore Mpho Sello’s ICT portfolio, data analytics projects, skills, education, and professional achievements." },
+      { property: "og:title", content: "Mpho Sello — ICT Professional Portfolio" },
+      { property: "og:description", content: "Data analytics, technology projects, skills, education, and achievements from Mpho Sello." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
+    ],
+  }),
   staticData: { importedDocument: { html: { "className": "dark", "lang": "en", "style": { scrollBehavior: "smooth" } }, body: { "className": "\x62g-[#\x3050505]" } } },
   component: Index,
 });
@@ -96,6 +106,9 @@ function Index() {
 }
 
 function ImportedNav() {
+  const [menuOpen, setMenuOpen] = useState(false);
+  const closeMenu = () => setMenuOpen(false);
+
   return (
     <nav className={"fixed top-0 w-full z-50 transition-all \x64uration-300 bg-transparent"} data-site-import-scroll-header={"{\"desktop\":{\"added\":[\"nav-blur\",\"border-b\",\"border-border\"],\"removed\":[\"bg-transparent\"],\"threshold\":648},\"mobile\":{\"added\":[\"nav-blur\",\"border-b\",\"border-border\"],\"removed\":[\"bg-transparent\"],\"threshold\":633}}"}>
       <div className={"max-w-7xl \x6dx-auto \x70x-4 \x73m:\x70x-6 \x6cg:\x70x-8"}>
