@@ -43,19 +43,19 @@ function Index() {
             <ImportedNav />
             <ImportedSectionIBuildIntelligentanalyticsData />
             <ImportedSectionAboutMe />
-            <div className={"min-h-[1250px] \x6cg:\x6din-h-[\x3950px]"} id="projects" aria-busy="false">
+            <div id="projects" aria-busy="false">
               <ImportedSectionFeaturedProjects />
             </div>
-            <div className={"[&]:min-h-[650px]"} id="skills" aria-busy="false">
+            <div id="skills" aria-busy="false">
               <ImportedSectionSkillsTechnologies />
             </div>
-            <div className={"min-h-[1200px] \x6cg:\x6din-h-[\x31064px]"} id="certificates" aria-busy="false">
+            <div id="certificates" aria-busy="false">
               <ImportedSectionCertificatesAwards />
             </div>
-            <div className={"min-h-[2000px] \x6cg:\x6din-h-[\x31954px]"} id="education" aria-busy="false">
+            <div id="education" aria-busy="false">
               <ImportedSectionEducationJourney />
             </div>
-            <div className={"min-h-[1500px] \x6cg:\x6din-h-[\x31094px]"} id="contact" aria-busy="false">
+            <div id="contact" aria-busy="false">
               <ImportedSectionGetInTouch />
             </div>
             <div className={"min-h-[420px] lg:min-h-[108px]"} id="footer" aria-busy="false">

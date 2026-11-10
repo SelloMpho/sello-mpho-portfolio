@@ -3475,29 +3475,14 @@ body::after {
   #tidio-chat {
     display: none !important;
   }
-
-  #projects {
-    min-height: 1000px !important;
-  }
-
-  #certificates {
-    min-height: 2350px !important;
-  }
-
-  #education {
-    min-height: 2240px !important;
-  }
-
-  #contact {
-    min-height: 1500px !important;
-  }
 }
 
 
 
 
 /* Captured reveal styles depended on an animation runtime that is not part of this import. */
-#root [style*="opacity: 0"] {
+#root [style*="opacity: 0"],
+#root [style*="opacity: 0;"] {
   opacity: 1 !important;
   transform: none !important;
 }
