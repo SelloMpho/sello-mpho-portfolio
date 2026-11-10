@@ -3462,4 +3462,19 @@ body::after {
   }
 }
 
+/* Restore the imported brand gradient; its captured utility declaration was empty. */
+.text-gradient {
+  background-image: var(--portfolio-gradient);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+@media (max-width: 767px) {
+  #tidio-chat {
+    display: none !important;
+  }
+}
+
 
