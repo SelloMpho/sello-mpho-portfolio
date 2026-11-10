@@ -3475,6 +3475,22 @@ body::after {
   #tidio-chat {
     display: none !important;
   }
+
+  #projects {
+    min-height: 1000px !important;
+  }
+
+  #certificates {
+    min-height: 2350px !important;
+  }
+
+  #education {
+    min-height: 2240px !important;
+  }
+
+  #contact {
+    min-height: 1500px !important;
+  }
 }
 
 
