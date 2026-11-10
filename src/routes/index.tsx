@@ -225,13 +225,7 @@ function ImportedSectionIBuildIntelligentanalyticsData() {
                 <path d="M9 18c-4.51 2-5-2-7-2" />
               </svg>
             </a>
-            <a className={"\x68over:\x74ext-foreground transition-colors"} href="#">
-              <svg className="h-4 w-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
-                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
-                <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
-              </svg>
-            </a>
+            
             <a className={"\x68over:\x74ext-foreground transition-colors"} href="mailto:202324276@student.spu.ac.za">
               <svg className="h-4 w-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                 <path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7" />
@@ -930,70 +924,6 @@ function ImportedSectionEducationJourney() {
                         <div className={"flex items-center \x73pace-x-2"}>
                           <div className={"w-1.5 h-1.5 \x62g-primary rounded-full"} />
                           <span className={"\x74ext-sm text-muted-foreground"}>Professional Communication</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className={"relative flex items-center \x6dd:\x66lex-row-reverse flex-col \x6dd:\x69tems-start"} style={{ animationDelay: "0.2s", translate: "none", rotate: "none", scale: "none", opacity: "0.9904", transform: "translate(28px, 0px)" } as CSSProperties}>
-              <div className={"absolute left-8 \x6dd:\x6ceft-1/\x32 w-4 h-4 \x62g-primary rounded-full \x62order-4 \x62order-background \x6dd:\x74ransform \x6dd:\x2dtranslate-x-2 z-10"} />
-              <div className={"w-full \x6dd:\x77-5/\x312 ml-16 \x6dd:\x6dl-0 \x6dd:\x6dl-8"}>
-                <div className={"rounded-lg \x62order \x62g-card text-card-foreground \x73hadow-sm project-card \x61nimate-slide-up"} style={{ transform: "translateY(0px)", opacity: "1" }}>
-                  <div className="p-6">
-                    <div className="flex items-start justify-between mb-4">
-                      <div className="flex-1">
-                        <h3 className={"\x74ext-xl \x66ont-bold text-foreground mb-2 [letter-spacing:-0.03em]"}>Motheo TVET College</h3>
-                        <h4 className={"\x74ext-lg \x66ont-semibold text-primary mb-2 [letter-spacing:-0.03em]"}>National Certificate in Motor trade</h4>
-                      </div>
-                      <div className="flex-shrink-0 ml-4">
-                        <svg className="h-8 w-8 text-primary" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                          <path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z" />
-                          <path d="M22 10v6" />
-                          <path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5" />
-                        </svg>
-                      </div>
-                    </div>
-                    <div className={"\x73pace-y-3 mb-4"}>
-                      <div className={"flex items-center \x74ext-sm text-muted-foreground"}>
-                        <svg className="h-4 w-4 mr-2" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                          <path d="M8 2v4" />
-                          <path d="M16 2v4" />
-                          <rect width="18" height="18" x="3" y="4" rx="2" />
-                          <path d="M3 10h18" />
-                        </svg>
-                        <span>2020 - 2021</span>
-                        <span className={"\x6dx-2"}>•</span>
-                        <span className={"\x70x-2 \x70y-1 \x62g-skill-bg rounded-full \x74ext-xs \x66ont-medium"}>Completed N4</span>
-                      </div>
-                      <div className={"flex items-center \x74ext-sm text-muted-foreground"}>
-                        <svg className="h-4 w-4 mr-2" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                          <path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0" />
-                          <circle cx="12" cy="10" r="3" />
-                        </svg>
-                        <span>Bloemfontein, South Africa</span>
-                      </div>
-                    </div>
-                    <p className={"text-muted-foreground mb-4 \x6ceading-relaxed"}>Technical and vocational education focusing on motor trade theory certification.</p>
-                    <div>
-                      <h5 className={"\x66ont-semibold mb-2 \x74ext-sm"}>Key Subjects/Areas:</h5>
-                      <div className={"grid grid-cols-1 \x73m:\x67rid-cols-2 gap-2"}>
-                        <div className={"flex items-center \x73pace-x-2"}>
-                          <div className={"w-1.5 h-1.5 \x62g-primary rounded-full"} />
-                          <span className={"\x74ext-sm text-muted-foreground"}>Engine Systems and Components</span>
-                        </div>
-                        <div className={"flex items-center \x73pace-x-2"}>
-                          <div className={"w-1.5 h-1.5 \x62g-primary rounded-full"} />
-                          <span className={"\x74ext-sm text-muted-foreground"}>Vehicle Electrical and Electronic Systems</span>
-                        </div>
-                        <div className={"flex items-center \x73pace-x-2"}>
-                          <div className={"w-1.5 h-1.5 \x62g-primary rounded-full"} />
-                          <span className={"\x74ext-sm text-muted-foreground"}>Transmission and Drivetrain Systems</span>
-                        </div>
-                        <div className={"flex items-center \x73pace-x-2"}>
-                          <div className={"w-1.5 h-1.5 \x62g-primary rounded-full"} />
-                          <span className={"\x74ext-sm text-muted-foreground"}>Vehicle Safety, Suspension, and Braking Systems</span>
                         </div>
                       </div>
                     </div>
