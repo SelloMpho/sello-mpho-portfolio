@@ -182,15 +182,39 @@ function ImportedNav() {
                 </svg>
               </span>
             </button>
-            <button className={"inline-flex items-center justify-center gap-2 whitespace-nowrap \x74ext-sm \x66ont-medium \x72ing-offset-background transition-colors \x66ocus-visible:\x6futline-none \x66ocus-visible:\x72ing-2 \x66ocus-visible:\x72ing-ring \x66ocus-visible:\x72ing-offset-2 \x64isabled:\x70ointer-events-none disabled:opacity-50 [&\x5fsvg]:\x70ointer-events-none [&\x5fsvg]:\x73ize-4 [&\x5fsvg]:\x73hrink-0 \x68over:\x62g-accent \x68over:\x74ext-accent-foreground h-9 rounded-md \x70x-3"}>
-              <svg className="h-5 w-5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                <path d="M4 12h16" />
-                <path d="M4 18h16" />
-                <path d="M4 6h16" />
-              </svg>
+            <button
+              className="inline-flex h-9 items-center justify-center rounded-md px-3 transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring md:hidden"
+              type="button"
+              aria-label={menuOpen ? "Close navigation menu" : "Open navigation menu"}
+              aria-expanded={menuOpen}
+              onClick={() => setMenuOpen((open) => !open)}
+            >
+              {menuOpen ? <X className="h-5 w-5" aria-hidden="true" /> : <Menu className="h-5 w-5" aria-hidden="true" />}
             </button>
           </div>
         </div>
+        {menuOpen && (
+          <div className="absolute left-4 right-4 top-16 z-[70] border border-border bg-background/95 p-2 shadow-lg backdrop-blur-md sm:left-6 sm:right-6 md:hidden">
+            {[
+              ["Home", "#home"],
+              ["About Me", "#about"],
+              ["Projects", "#projects"],
+              ["Skills", "#skills"],
+              ["Achievements", "#certificates"],
+              ["Education", "#education"],
+              ["Contact", "#contact"],
+            ].map(([label, href]) => (
+              <a
+                className="block px-3 py-2 text-base font-medium text-foreground transition-colors hover:text-primary"
+                href={href}
+                key={href}
+                onClick={closeMenu}
+              >
+                {label}
+              </a>
+            ))}
+          </div>
+        )}
       </div>
     </nav>
   );
